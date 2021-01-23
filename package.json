@@ -1,0 +1,25 @@
+{
+  "name": "book-library-system",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "concurrently --kill-others \"npm run dev:server\" \"npm run dev:client\"",
+    "dev:server": "cd server && npm run dev",
+    "dev:client": "cd client && npm start"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/knowankit/book-library-system.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/knowankit/book-library-system/issues"
+  },
+  "homepage": "https://github.com/knowankit/book-library-system#readme",
+  "devDependencies": {
+    "concurrently": "^5.3.0"
+  }
+}
