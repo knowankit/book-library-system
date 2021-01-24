@@ -1,14 +1,20 @@
 import React, { useEffect, FC, ChangeEvent } from 'react'
 import { BookProps } from 'types/books'
-import { generateId } from 'lib/generate-id'
 
 interface IProps {
   book: BookProps;
   updateNewBookDetails: (name: string, value: string | number | Array<string>) => void;
-  saveBook: () => void;
+  updateBook: () => void;
+  resetBook: () => void;
 }
 
-const AddBook: FC<IProps>  = ({ book, updateNewBookDetails, saveBook }): JSX.Element => {
+const EditBook: FC<IProps>  = ({ book, updateNewBookDetails, updateBook, resetBook }): JSX.Element => {
+  useEffect(() => {
+    return function () {
+      resetBook()
+    }
+  }, [])
+
   const handleChange = (name: string, value: string | number | Array<string>) => {
     updateNewBookDetails(name, value)
   }
@@ -16,10 +22,7 @@ const AddBook: FC<IProps>  = ({ book, updateNewBookDetails, saveBook }): JSX.Ele
   const handleSubmit = (e) => {
     e.preventDefault()
 
-    const id = generateId()
-    updateNewBookDetails('_id', id)
-
-    saveBook()
+    updateBook()
   }
 
   return (
@@ -56,7 +59,7 @@ const AddBook: FC<IProps>  = ({ book, updateNewBookDetails, saveBook }): JSX.Ele
           </div>
 
           <div className='form-item-submit'>
-            <input type='submit' className='submit-button' value='Add' />
+            <input type='submit' className='submit-button' value='Update' />
           </div>
         </form>
       </div>
@@ -100,4 +103,4 @@ const AddBook: FC<IProps>  = ({ book, updateNewBookDetails, saveBook }): JSX.Ele
   )
 }
 
-export default AddBook
+export default EditBook

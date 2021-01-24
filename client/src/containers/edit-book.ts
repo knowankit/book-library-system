@@ -1,28 +1,28 @@
-import { fetchBooks } from 'actions/books'
-import { setBook } from 'actions/book'
 import { connect } from 'react-redux';
+import { updateNewBookDetails, updateBook, resetBook } from 'actions/book'
 import { AnyAction, bindActionCreators, Dispatch } from 'redux';
-import Books from 'components/books'
+import EditBook from 'components/edit-book'
 import { BookProps } from 'types/books'
 
 const mapStateToProps = (state: {
-  books: {
-    books: BookProps[];
+  book: {
+    book: BookProps;
   };
 }) => {
   return {
-    books: state.books.books,
+    book: state.book.book,
   };
 };
 
 const mapDispatchToProps = (dispatch: Dispatch<AnyAction>) => {
   return bindActionCreators(
     {
-      fetchBooks,
-      setBook
+      updateNewBookDetails,
+      updateBook,
+      resetBook
     },
     dispatch,
   );
 };
 
-export default connect(mapStateToProps, mapDispatchToProps)(Books);
+export default connect(mapStateToProps, mapDispatchToProps)(EditBook);

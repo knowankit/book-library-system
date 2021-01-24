@@ -1,7 +1,9 @@
 import { FC } from 'react'
 import { BookProps } from 'types/books'
 
-const Book:FC<BookProps> = ({ _id, title, pageCount, thumbnailUrl, shortDescription, longDescription, status, isEditPage }):JSX.Element => {
+type IProps = BookProps & { onEdit: (_id: string | number) => void }
+
+const Book:FC<IProps> = ({ _id, title, pageCount, thumbnailUrl, shortDescription, longDescription, status, onEdit }):JSX.Element => {
   return (
     <>
       <div className='book-container'>
@@ -11,7 +13,7 @@ const Book:FC<BookProps> = ({ _id, title, pageCount, thumbnailUrl, shortDescript
         <div className='book-details'>
           <p className='book-title'>{title}</p>
           <p className='book-description'>{shortDescription || longDescription}</p>
-          {isEditPage && <button className='edit-button'>Edit</button>}
+          <button className='edit-button' onClick={() => onEdit(_id)}>Edit</button>
         </div>
       </div>
       <style>

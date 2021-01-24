@@ -18,7 +18,7 @@ export default produce((draftState, action) => {
 
     case constants.FETCH_BOOKS_SUCCESS:
       draftState.books = action.books
-      draftState.doneFetching = false
+      draftState.doneFetching = true
       draftState.isFetching = false
 
       break
