@@ -12,8 +12,11 @@
     "type": "git",
     "url": "git+https://github.com/knowankit/book-library-system.git"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": [
+    "libray-management",
+    "library"
+  ],
+  "author": "Ankit",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/knowankit/book-library-system/issues"
