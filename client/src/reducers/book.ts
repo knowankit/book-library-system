@@ -22,5 +22,31 @@ export default produce((draftState, action) => {
       draftState.book[action.key] = action.value
 
       break
+
+      case constants.UPDATE_BOOK_DETAILS_REQUEST:
+        draftState.isFetching = true
+        draftState.doneFetching = false
+
+        break
+
+      case constants.UPDATE_BOOK_DETAILS_SUCCESS:
+        draftState.doneFetching = true
+        draftState.isFetching = false
+
+        break
+
+      case constants.UPDATE_BOOK_DETAILS_FAILURE:
+        draftState.isFetching = false
+        draftState.doneFetching = true
+
+        break
+
+    case constants.SET_BOOK:
+      draftState.book = action.value
+
+      break
+
+    case constants.RESET_BOOK:
+      return initialState
   }
 }, initialState)
