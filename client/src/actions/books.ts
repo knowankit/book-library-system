@@ -6,7 +6,7 @@ export const fetchBooks = () => async (dispatch) => {
   })
 
   try {
-    const url = '/users'
+    const url = '/books'
     const response = await fetch(url).then(res => res.json())
 
     dispatch({

@@ -1,18 +1,15 @@
 const express = require('express')
+const fs = require('fs');
 const app = express()
 const port = 3001
 
-app.get('/', (req, res) => {
-  res.send('Hello World!')
-})
+app.get('/books', (req, res) => {
+  const rawdata = fs.readFileSync('books.json')
+  const jsonData = JSON.parse(rawdata)
 
-app.get('/users', (req, res) => {
-  res.json([
-    {id: 1, username: 'Ankit'},
-    {id: 2, username: 'Rajath'}
-  ])
+  res.send(jsonData)
 })
 
 app.listen(port, () => {
-  console.log(`Example app listening at http://localhost:${port}`)
+  console.log(`Book Library app listening at http://localhost:${port}`)
 })
