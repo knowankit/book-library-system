@@ -1,7 +1,10 @@
 const express = require('express')
+const bodyParser = require('body-parser');
 const fs = require('fs');
 const app = express()
 const port = 3001
+
+app.use(bodyParser.json());
 
 app.get('/books', (req, res) => {
   const rawdata = fs.readFileSync('books.json')
@@ -9,6 +12,27 @@ app.get('/books', (req, res) => {
 
   res.send(jsonData)
 })
+
+app.post('/book', (req, res) => {
+  const book = {
+    _id: req.body['_id'],
+    title: req.body['title'],
+    shortDescription: req.body['shortDescription'],
+    author: req.body['author'],
+    pageCount: req.body['pageCount']
+  }
+
+  const rawdata = fs.readFileSync('books.json')
+  const jsonData = JSON.parse(rawdata)
+
+  jsonData.push(book)
+
+  const data = JSON.stringify(jsonData)
+  fs.writeFileSync('books.json', data);
+
+  res.sendStatus(200);
+})
+
 
 app.listen(port, () => {
   console.log(`Book Library app listening at http://localhost:${port}`)

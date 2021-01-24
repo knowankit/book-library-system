@@ -7,14 +7,7 @@ import {
   Route
 } from "react-router-dom";
 import Books from 'containers/books'
-
-function About() {
-  return (
-    <div>
-      <h2>About</h2>
-    </div>
-  );
-}
+import AddBook from 'containers/add-book'
 
 function Dashboard() {
   return (
@@ -29,18 +22,17 @@ const App = (): JSX.Element => {
     <Router>
       <UIBanner />
       <UINavigation />
-
       <Switch>
-          <Route exact path="/">
-            <Books />
-          </Route>
-          <Route path="/add">
-            <About />
-          </Route>
-          <Route path="/edit">
-            <Dashboard />
-          </Route>
-        </Switch>
+        <Route exact path="/">
+          <Books isEditPage={false} />
+        </Route>
+        <Route path="/add">
+          <AddBook />
+        </Route>
+        <Route path="/edit">
+          <Books isEditPage />
+        </Route>
+      </Switch>
     </Router>
   )
 }
