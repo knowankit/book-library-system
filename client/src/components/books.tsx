@@ -13,7 +13,6 @@ const Books: FC<IProps> = ({ books, fetchBooks}):JSX.Element => {
 
   return (
   <>
-    <h1>Book Library Management</h1>
     <div className='books-container'>
       {books.map(book => <UIBook {...book} key={book._id} />)}
     </div>
