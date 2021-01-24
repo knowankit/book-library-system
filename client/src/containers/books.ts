@@ -2,10 +2,11 @@ import { fetchBooks } from 'actions/books'
 import { connect } from 'react-redux';
 import { AnyAction, bindActionCreators, Dispatch } from 'redux';
 import Books from 'components/books'
+import { BookProps } from 'types/books'
 
 const mapStateToProps = (state: {
   books: {
-    books: [];
+    books: BookProps[];
   };
 }) => {
   return {

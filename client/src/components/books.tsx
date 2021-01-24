@@ -3,19 +3,19 @@ import { BookProps } from 'types/books'
 import UIBook from 'components/UI/book'
 interface IProps {
   books: BookProps[];
-  fetchBooks: () => void
+  fetchBooks: () => void,
+  isEditPage: boolean,
 }
 
-const Books: FC<IProps> = ({ books, fetchBooks}):JSX.Element => {
+const Books: FC<IProps> = ({ books, fetchBooks, isEditPage}):JSX.Element => {
   useEffect(() => {
     fetchBooks()
   }, [])
 
   return (
   <>
-    <h1>Book Library Management</h1>
     <div className='books-container'>
-      {books.map(book => <UIBook {...book} key={book._id} />)}
+      {books.map(book => <UIBook {...book} key={book._id} isEditPage={isEditPage} />)}
     </div>
     <style>
       {

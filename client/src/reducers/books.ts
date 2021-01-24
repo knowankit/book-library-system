@@ -1,5 +1,5 @@
 import produce from 'immer'
-import constants from '../constants/books'
+import constants from 'constants/books'
 
 const initialState = {
   books: [],

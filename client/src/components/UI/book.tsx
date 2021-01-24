@@ -1,17 +1,17 @@
 import { FC } from 'react'
 import { BookProps } from 'types/books'
 
-const Book:FC<BookProps> = ({ _id, title, pageCount, thumbnailUrl, shortDescription, longDescription, authors, status }):JSX.Element => {
+const Book:FC<BookProps> = ({ _id, title, pageCount, thumbnailUrl, shortDescription, longDescription, status, isEditPage }):JSX.Element => {
   return (
     <>
       <div className='book-container'>
-        <div>
+        <div className='book-image'>
           <img src={thumbnailUrl} height='200' />
         </div>
         <div className='book-details'>
           <p className='book-title'>{title}</p>
           <p className='book-description'>{shortDescription || longDescription}</p>
-          <button className='edit-button'>Edit</button>
+          {isEditPage && <button className='edit-button'>Edit</button>}
         </div>
       </div>
       <style>
@@ -22,6 +22,10 @@ const Book:FC<BookProps> = ({ _id, title, pageCount, thumbnailUrl, shortDescript
               margin-bottom: 20px;
               width: 40%;
               display:flex;
+            }
+
+            .book-image {
+              background: #262c26
             }
 
             .book-details {
