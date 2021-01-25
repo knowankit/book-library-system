@@ -10,11 +10,11 @@ const SelectBookSkeleton = ():JSX.Element => {
           `
             .no-book-skeleton {
               height: 100px;
-              width: 100%;
               border: 2px dashed gray;
               display: flex;
               align-items: center;
               justify-content: center;
+              padding: 10px;
             }
           `
         }

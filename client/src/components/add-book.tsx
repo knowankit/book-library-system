@@ -60,7 +60,7 @@ const AddBook: FC<IProps>  = ({ book, updateNewBookDetails, saveBook, history })
           </div>
 
           <div className='form-item-submit'>
-            <input type='submit' className='submit-button' value='Add' />
+            <button type='submit' className='submit-button'> <i className='bx bxs-plus-circle' ></i> Add</button>
           </div>
         </form>
       </div>
@@ -98,6 +98,10 @@ const AddBook: FC<IProps>  = ({ book, updateNewBookDetails, saveBook, history })
               color: white;
               font-size: 18px;
               cursor: pointer;
+            }
+
+            .form-item-submit i {
+              color: white;
             }
           `
         }

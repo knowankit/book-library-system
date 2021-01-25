@@ -6,9 +6,9 @@ const Navigation = ():JSX.Element => {
   return (
     <>
       <div className='navigation'>
-        <Link to="/" className='menu-item'>Books</Link>
-        <Link to="/add" className='menu-item'>Add</Link>
-        <Link to="/edit" className='menu-item'>Edit</Link>
+        <Link to="/" className='menu-item'><i className='bx bxs-book'></i><span className='menu-text'>Books</span></Link>
+        <Link to="/add" className='menu-item'><i className='bx bxs-book-add' ></i><span className='menu-text'>Add</span></Link>
+        <Link to="/edit" className='menu-item'><i className='bx bxs-edit-alt'></i><span className='menu-text'>Edit</span></Link>
       </div>
       <style>
         {
@@ -29,13 +29,29 @@ const Navigation = ():JSX.Element => {
               top: 0px;
             }
 
+            .bx{
+              color: black;
+            }
+
             .menu-item {
               font-size: 20px;
-              color: black;
+              color: #26262c;
               font-weight: bold;
               margin-right: 10px;
               text-decoration: none;
               padding: 10px;
+            }
+
+            .menu-item i {
+              margin-right: 10px;
+            }
+
+            .menu-item:hover {
+              color: #6dd5ed;
+            }
+
+            .menu-item:hover i{
+              color: #6dd5ed;
             }
           `
         }

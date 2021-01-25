@@ -37,10 +37,16 @@ input:focus{
   box-shadow:         3px -3px 15px -6px #ccc;
 }
 
+// Media Queries
+
 @media only screen and (min-width: 270px) {
 
   .form-search input {
     width: 90%;
+  }
+
+  .menu-text {
+    display: none;
   }
 }
 
@@ -52,6 +58,10 @@ input:focus{
   .form-search input {
     width: 90%;
   }
+
+  .menu-text {
+    display: none;
+  }
 }
 
 @media only screen and (min-width: 768px) {
@@ -62,6 +72,10 @@ input:focus{
   .form-search input {
     width: 60%;
   }
+
+  .menu-text {
+    display: inline-block;
+  }
 }
 
 @media only screen and (min-width: 1366px) {
@@ -71,6 +85,10 @@ input:focus{
 
   .form-search input {
     width: 60%;
+  }
+
+  .menu-text {
+    display: inline-block;
   }
 }
 

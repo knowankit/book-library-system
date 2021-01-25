@@ -69,7 +69,7 @@ const EditBook: FC<IProps>  = ({ book, updateNewBookDetails, updateBook, resetBo
           </div>
 
           <div className='form-item-submit'>
-            <input type='submit' className='submit-button' value='Update' />
+            <button type='submit' className='submit-button'><i className='bx bxs-edit-alt'></i>Update</button>
           </div>
         </form>
     )
@@ -114,6 +114,10 @@ const EditBook: FC<IProps>  = ({ book, updateNewBookDetails, updateBook, resetBo
               color: white;
               font-size: 18px;
               cursor: pointer;
+            }
+
+            .form-item-submit i {
+              color: white;
             }
           `
         }

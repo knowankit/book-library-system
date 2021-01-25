@@ -27,7 +27,7 @@ app.post('/book', (req, res) => {
 
   jsonData.push(book)
 
-  const data = JSON.stringify(jsonData)
+  const data = JSON.stringify(jsonData, null, 2)
   fs.writeFileSync('books.json', data);
 
   res.sendStatus(200);

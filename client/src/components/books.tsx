@@ -8,11 +8,10 @@ interface IProps extends RouteComponentProps {
   books: BookProps[];
   fetchBooks: () => void,
   setBook: (book: BookProps) => void;
-  isEditPage: boolean,
   doneFetching: boolean,
 }
 
-const Books: FC<IProps> = ({ books, fetchBooks, isEditPage, setBook, history, doneFetching }): JSX.Element => {
+const Books: FC<IProps> = ({ books, fetchBooks, setBook, history, doneFetching }): JSX.Element => {
   const [filteredData, setFilteredData] = useState<BookProps[]>(books)
 
   useEffect(() => {
@@ -53,7 +52,7 @@ const Books: FC<IProps> = ({ books, fetchBooks, isEditPage, setBook, history, do
     </div>
 
     <div className='books-container'>
-      {filteredData.map(book => <UIBook {...book} key={book._id} isEditPage={isEditPage} onEdit={handleEdit} />)}
+      {filteredData.map(book => <UIBook {...book} key={book._id} onEdit={handleEdit} />)}
     </div>
     <style>
       {
@@ -82,6 +81,7 @@ const Books: FC<IProps> = ({ books, fetchBooks, isEditPage, setBook, history, do
           .form-search input[type="search"] {
             box-sizing: border-box;
             padding-left: 20px;
+            box-shadow: 3px -3px 15px -6px #ccc;
           }
 
           .form-search input:outline {
