@@ -22,7 +22,7 @@ const Book:FC<IProps> = ({ _id, title, pageCount, thumbnailUrl, shortDescription
             .book-container {
               height: 200px;
               margin-bottom: 20px;
-              width: 40%;
+              width: 500px;
               display:flex;
             }
 

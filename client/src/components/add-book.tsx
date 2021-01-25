@@ -24,7 +24,7 @@ const AddBook: FC<IProps>  = ({ book, updateNewBookDetails, saveBook }): JSX.Ele
 
   return (
     <>
-      <div className='add-book-form'>
+      <div className='book-form'>
         <form onSubmit={handleSubmit} method='post'>
           <div className='form-item'>
             <label>Book Name</label>
@@ -63,25 +63,27 @@ const AddBook: FC<IProps>  = ({ book, updateNewBookDetails, saveBook }): JSX.Ele
       <style>
         {
           `
-            .add-book-form{
+            .book-form{
               display: flex;
               flex-direction: column;
               justify-content: center;
-              margin: 0px 20rem;
+              padding: 10px;
             }
 
             .form-item {
               margin-bottom: 20px;
+              flex-direction: column;
+              justify-content: center;
             }
 
             .form-item label {
               display: block;
-              width: 100%;
+              width: 98%;
               margin-bottom: 5px;
             }
 
             .form-item input {
-              width: 100%;
+              width: 98%;
               height: 25px;
             }
 

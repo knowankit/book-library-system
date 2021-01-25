@@ -29,3 +29,22 @@ h1 {
   background-color:darken(white,5%);
   color: black;
 }
+
+@media only screen and (min-width: 378px) {
+  .book-form {
+    margin: 0px 2rem !important;
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .book-form {
+    margin: 0px 15rem !important;
+  }
+}
+
+@media only screen and (min-width: 1366px) {
+  .book-form {
+    margin: 0px 20rem !important;
+  }
+}
+

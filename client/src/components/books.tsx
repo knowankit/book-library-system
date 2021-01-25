@@ -36,8 +36,10 @@ const Books: FC<IProps> = ({ books, fetchBooks, isEditPage, setBook, history}):J
           .books-container {
             text-align: center;
             display: flex;
-            flex-direction: column;
+            flex-wrap: wrap;
+            justify-content: space-evenly;
             align-items: center;
+            padding: 10px;
           }
         `
       }
