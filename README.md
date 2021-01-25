@@ -1,6 +1,8 @@
 # Book Library System
 This is a book management app where the user can do the CRUD operations. User can `add/edit/delete` books. Data's are served from the express server and any `update/delete/edit` in the books will write in the json file.
 
+A searchbox has been added to search the book list.
+
 ![Library](https://github.com/knowankit/book-library-system/blob/master/preview.png?raw=true)
 
 ## Installation
