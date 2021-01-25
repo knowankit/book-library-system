@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './index.scss';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import { Provider } from 'react-redux'
@@ -8,6 +7,8 @@ import combineReducers from 'lib/with-store'
 import { createStore, applyMiddleware } from 'redux'
 import thunk from 'redux-thunk';
 import { composeWithDevTools } from 'redux-devtools-extension'
+
+import './index.scss';
 
 const store = createStore(combineReducers, composeWithDevTools(
   applyMiddleware(thunk)

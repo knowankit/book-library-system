@@ -8,6 +8,5 @@ export type BookProps =  {
   longDescription?: string,
   status?: string,
   author: string,
-  categories?: Array<string>,
-  isEditPage?: boolean
+  categories?: Array<string>
 }

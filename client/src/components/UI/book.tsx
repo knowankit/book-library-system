@@ -12,8 +12,17 @@ const Book:FC<IProps> = ({ _id, title, pageCount, thumbnailUrl, shortDescription
         <div className='book-details'>
           <b className='book-title'>{title}</b>
           <p className='book-description'>{shortDescription || longDescription}</p>
-          <button className='edit-button' onClick={() => onEdit(_id)}>Edit</button>
+          <button className='edit-button' onClick={() => onEdit(_id)}><i className='bx bxs-edit-alt'></i> Edit</button>
         </div>
+        <style>
+          {
+            `
+              .edit-button i {
+                color: white;
+              }
+            `
+          }
+        </style>
       </div>
     )
 }
