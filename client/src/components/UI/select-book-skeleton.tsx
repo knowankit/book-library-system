@@ -3,15 +3,18 @@ const SelectBookSkeleton = ():JSX.Element => {
   return (
     <>
       <div className='no-book-skeleton'>
-          Please select any book to edit
+          Please select any book from book listing page to edit
       </div>
       <style>
         {
           `
             .no-book-skeleton {
-              height: 250px;
-              width: 250px;
+              height: 100px;
+              width: 100%;
               border: 2px dashed gray;
+              display: flex;
+              align-items: center;
+              justify-content: center;
             }
           `
         }

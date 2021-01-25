@@ -1,14 +1,18 @@
 import React, { useEffect, FC, ChangeEvent } from 'react'
 import { BookProps } from 'types/books'
+import UIFormSelectSkeleton from 'components/UI/select-book-skeleton'
+import { RouteComponentProps } from 'react-router-dom'
+import { withRouter } from "react-router";
 
-interface IProps {
+
+interface IProps extends RouteComponentProps {
   book: BookProps;
   updateNewBookDetails: (name: string, value: string | number | Array<string>) => void;
   updateBook: () => void;
   resetBook: () => void;
 }
 
-const EditBook: FC<IProps>  = ({ book, updateNewBookDetails, updateBook, resetBook }): JSX.Element => {
+const EditBook: FC<IProps>  = ({ book, updateNewBookDetails, updateBook, resetBook, history }): JSX.Element => {
   useEffect(() => {
     return function () {
       resetBook()
@@ -23,12 +27,18 @@ const EditBook: FC<IProps>  = ({ book, updateNewBookDetails, updateBook, resetBo
     e.preventDefault()
 
     updateBook()
+
+    history.push('/')
   }
 
-  return (
-    <>
-      <div className='add-book-form'>
-        <form onSubmit={handleSubmit} method='post'>
+  const renderUI = () => {
+    if(!book.title) {
+      return <UIFormSelectSkeleton />
+    }
+
+    return (
+
+      <form onSubmit={handleSubmit} method='post'>
           <div className='form-item'>
             <label>Book Name</label>
             <input type='text' name='title' value={book.title} onChange={(e: ChangeEvent<HTMLInputElement>) => handleChange(e.target.name, e.target.value)} />
@@ -62,6 +72,14 @@ const EditBook: FC<IProps>  = ({ book, updateNewBookDetails, updateBook, resetBo
             <input type='submit' className='submit-button' value='Update' />
           </div>
         </form>
+    )
+  }
+
+  return (
+    <>
+
+      <div className='book-form'>
+        {renderUI()}
       </div>
       <style>
         {
@@ -70,21 +88,22 @@ const EditBook: FC<IProps>  = ({ book, updateNewBookDetails, updateBook, resetBo
               display: flex;
               flex-direction: column;
               justify-content: center;
-              margin: 0px 20rem;
             }
 
             .form-item {
               margin-bottom: 20px;
+              flex-direction: column;
+              justify-content: center;
             }
 
             .form-item label {
               display: block;
-              width: 100%;
+              width: 98%;
               margin-bottom: 5px;
             }
 
             .form-item input {
-              width: 100%;
+              width: 98%;
               height: 25px;
             }
 
@@ -103,4 +122,4 @@ const EditBook: FC<IProps>  = ({ book, updateNewBookDetails, updateBook, resetBo
   )
 }
 
-export default EditBook
+export default withRouter(EditBook)

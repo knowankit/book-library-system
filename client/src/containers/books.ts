@@ -8,10 +8,12 @@ import { BookProps } from 'types/books'
 const mapStateToProps = (state: {
   books: {
     books: BookProps[];
+    doneFetching: boolean;
   };
 }) => {
   return {
     books: state.books.books,
+    doneFetching: state.books.doneFetching
   };
 };
 

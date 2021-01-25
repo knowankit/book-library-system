@@ -35,6 +35,7 @@ const Navigation = ():JSX.Element => {
               font-weight: bold;
               margin-right: 10px;
               text-decoration: none;
+              padding: 10px;
             }
           `
         }

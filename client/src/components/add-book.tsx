@@ -1,14 +1,16 @@
-import React, { useEffect, FC, ChangeEvent } from 'react'
+import React, { FC, ChangeEvent } from 'react'
 import { BookProps } from 'types/books'
 import { generateId } from 'lib/generate-id'
+import { withRouter } from "react-router";
+import { RouteComponentProps } from 'react-router-dom'
 
-interface IProps {
+interface IProps extends RouteComponentProps {
   book: BookProps;
   updateNewBookDetails: (name: string, value: string | number | Array<string>) => void;
   saveBook: () => void;
 }
 
-const AddBook: FC<IProps>  = ({ book, updateNewBookDetails, saveBook }): JSX.Element => {
+const AddBook: FC<IProps>  = ({ book, updateNewBookDetails, saveBook, history }): JSX.Element => {
   const handleChange = (name: string, value: string | number | Array<string>) => {
     updateNewBookDetails(name, value)
   }
@@ -20,11 +22,13 @@ const AddBook: FC<IProps>  = ({ book, updateNewBookDetails, saveBook }): JSX.Ele
     updateNewBookDetails('_id', id)
 
     saveBook()
+    history.push('/')
+
   }
 
   return (
     <>
-      <div className='add-book-form'>
+      <div className='book-form'>
         <form onSubmit={handleSubmit} method='post'>
           <div className='form-item'>
             <label>Book Name</label>
@@ -63,25 +67,27 @@ const AddBook: FC<IProps>  = ({ book, updateNewBookDetails, saveBook }): JSX.Ele
       <style>
         {
           `
-            .add-book-form{
+            .book-form{
               display: flex;
               flex-direction: column;
               justify-content: center;
-              margin: 0px 20rem;
+              padding: 10px;
             }
 
             .form-item {
               margin-bottom: 20px;
+              flex-direction: column;
+              justify-content: center;
             }
 
             .form-item label {
               display: block;
-              width: 100%;
+              width: 98%;
               margin-bottom: 5px;
             }
 
             .form-item input {
-              width: 100%;
+              width: 98%;
               height: 25px;
             }
 
@@ -100,4 +106,4 @@ const AddBook: FC<IProps>  = ({ book, updateNewBookDetails, saveBook }): JSX.Ele
   )
 }
 
-export default AddBook
+export default withRouter(AddBook)
