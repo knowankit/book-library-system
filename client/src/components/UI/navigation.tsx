@@ -6,9 +6,9 @@ const Navigation = ():JSX.Element => {
   return (
     <>
       <div className='navigation'>
-        <Link to="/" className='menu-item'><i className='bx bxs-book'></i>Books</Link>
-        <Link to="/add" className='menu-item'><i className='bx bxs-book-add' ></i>Add</Link>
-        <Link to="/edit" className='menu-item'><i className='bx bxs-edit-alt'></i>Edit</Link>
+        <Link to="/" className='menu-item'><i className='bx bxs-book'></i><span className='menu-text'>Books</span></Link>
+        <Link to="/add" className='menu-item'><i className='bx bxs-book-add' ></i><span className='menu-text'>Add</span></Link>
+        <Link to="/edit" className='menu-item'><i className='bx bxs-edit-alt'></i><span className='menu-text'>Edit</span></Link>
       </div>
       <style>
         {
