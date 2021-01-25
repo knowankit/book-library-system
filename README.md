@@ -13,7 +13,7 @@ Clone the repository and change the directory to `book-library-system` and run
 $ npm install
 ```
 
-Now switch to `client` folder and Run the below command. This will install all the client dependencies.
+Now switch to `client` folder (`cd client`) and Run the below command. This will install all the client dependencies.
 ```
 $ npm install
 ```
@@ -25,7 +25,7 @@ Run the below command in server folder. This will install all the server related
 $ npm install
 ```
 
-Now all the dependencies are installed and our app can be started.
+Now all the dependencies are installed and our app can be started. Go to the root folder of this project by switching to `book-library-system` folder
 
 To start the app run the below command : -
 ```
