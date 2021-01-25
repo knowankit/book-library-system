@@ -1,5 +1,8 @@
 # Book Library System
 This is a book management app where the user can do the CRUD operations. User can add/edit/delete books.
+
+![Library](https://github.com/knowankit/book-library-system/blob/master/preview.png?raw=true)
+
 ## Installation
 Follow the steps to run this app locally : -
 
