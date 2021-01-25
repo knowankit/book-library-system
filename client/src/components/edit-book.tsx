@@ -7,7 +7,7 @@ import { withRouter } from "react-router";
 
 interface IProps extends RouteComponentProps {
   book: BookProps;
-  updateNewBookDetails: (name: string, value: string | number | Array<string>) => void;
+  updateNewBookDetails: (name: string, value: string | number) => void;
   updateBook: () => void;
   resetBook: () => void;
 }
@@ -19,11 +19,11 @@ const EditBook: FC<IProps>  = ({ book, updateNewBookDetails, updateBook, resetBo
     }
   }, [])
 
-  const handleChange = (name: string, value: string | number | Array<string>) => {
+  const handleChange = (name: string, value: string | number) => {
     updateNewBookDetails(name, value)
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e:ChangeEvent<HTMLFormElement>) => {
     e.preventDefault()
 
     updateBook()
@@ -38,7 +38,7 @@ const EditBook: FC<IProps>  = ({ book, updateNewBookDetails, updateBook, resetBo
 
     return (
 
-      <form onSubmit={handleSubmit} method='post'>
+      <form onSubmit={(e:ChangeEvent<HTMLFormElement>) => handleSubmit(e)} method='post'>
           <div className='form-item'>
             <label>Book Name</label>
             <input type='text' name='title' value={book.title} onChange={(e: ChangeEvent<HTMLInputElement>) => handleChange(e.target.name, e.target.value)} />

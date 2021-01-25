@@ -1,6 +1,8 @@
 import constants from 'constants/book'
+import { Dispatch } from 'redux';
+import { BookProps } from 'types/books'
 
-export const updateNewBookDetails = (key, value) => {
+export const updateNewBookDetails = (key: string, value: string | number) => {
   return {
     type: constants.UPDATE_NEW_BOOK_DETAILS,
     key,
@@ -8,7 +10,7 @@ export const updateNewBookDetails = (key, value) => {
   }
 }
 
-export const saveBook = () => async (dispatch, getState) => {
+export const saveBook = () => async (dispatch:Dispatch, getState:any) => {
   dispatch({
     type: constants.SAVE_NEW_BOOK_DETAILS_REQUEST
   })
@@ -43,7 +45,7 @@ export const saveBook = () => async (dispatch, getState) => {
   }
 }
 
-export const setBook = (book) => {
+export const setBook = (book:BookProps) => {
   return {
     type: constants.SET_BOOK,
     value: book
@@ -56,7 +58,7 @@ export const resetBook = () => {
   }
 }
 
-export const updateBook = () => async (dispatch, getState) => {
+export const updateBook = () => async (dispatch:Dispatch, getState:any) => {
   dispatch({
     type: constants.UPDATE_BOOK_DETAILS_REQUEST
   })
