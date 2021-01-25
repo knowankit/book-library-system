@@ -34,17 +34,29 @@ h1 {
   .book-form {
     margin: 0px 2rem !important;
   }
+
+  .form-search input {
+    width: 90%;
+  }
 }
 
 @media only screen and (min-width: 768px) {
   .book-form {
     margin: 0px 15rem !important;
   }
+
+  .form-search input {
+    width: 60%;
+  }
 }
 
 @media only screen and (min-width: 1366px) {
   .book-form {
     margin: 0px 20rem !important;
+  }
+
+  .form-search input {
+    width: 60%;
   }
 }
 
