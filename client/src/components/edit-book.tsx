@@ -1,14 +1,18 @@
 import React, { useEffect, FC, ChangeEvent } from 'react'
 import { BookProps } from 'types/books'
 import UIFormSelectSkeleton from 'components/UI/select-book-skeleton'
-interface IProps {
+import { RouteComponentProps } from 'react-router-dom'
+import { withRouter } from "react-router";
+
+
+interface IProps extends RouteComponentProps {
   book: BookProps;
   updateNewBookDetails: (name: string, value: string | number | Array<string>) => void;
   updateBook: () => void;
   resetBook: () => void;
 }
 
-const EditBook: FC<IProps>  = ({ book, updateNewBookDetails, updateBook, resetBook }): JSX.Element => {
+const EditBook: FC<IProps>  = ({ book, updateNewBookDetails, updateBook, resetBook, history }): JSX.Element => {
   useEffect(() => {
     return function () {
       resetBook()
@@ -23,6 +27,8 @@ const EditBook: FC<IProps>  = ({ book, updateNewBookDetails, updateBook, resetBo
     e.preventDefault()
 
     updateBook()
+
+    history.push('/')
   }
 
   const renderUI = () => {
@@ -116,4 +122,4 @@ const EditBook: FC<IProps>  = ({ book, updateNewBookDetails, updateBook, resetBo
   )
 }
 
-export default EditBook
+export default withRouter(EditBook)

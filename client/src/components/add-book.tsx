@@ -1,14 +1,16 @@
-import React, { useEffect, FC, ChangeEvent } from 'react'
+import React, { FC, ChangeEvent } from 'react'
 import { BookProps } from 'types/books'
 import { generateId } from 'lib/generate-id'
+import { withRouter } from "react-router";
+import { RouteComponentProps } from 'react-router-dom'
 
-interface IProps {
+interface IProps extends RouteComponentProps {
   book: BookProps;
   updateNewBookDetails: (name: string, value: string | number | Array<string>) => void;
   saveBook: () => void;
 }
 
-const AddBook: FC<IProps>  = ({ book, updateNewBookDetails, saveBook }): JSX.Element => {
+const AddBook: FC<IProps>  = ({ book, updateNewBookDetails, saveBook, history }): JSX.Element => {
   const handleChange = (name: string, value: string | number | Array<string>) => {
     updateNewBookDetails(name, value)
   }
@@ -20,6 +22,8 @@ const AddBook: FC<IProps>  = ({ book, updateNewBookDetails, saveBook }): JSX.Ele
     updateNewBookDetails('_id', id)
 
     saveBook()
+    history.push('/')
+
   }
 
   return (
@@ -102,4 +106,4 @@ const AddBook: FC<IProps>  = ({ book, updateNewBookDetails, saveBook }): JSX.Ele
   )
 }
 
-export default AddBook
+export default withRouter(AddBook)

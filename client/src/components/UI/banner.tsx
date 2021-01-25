@@ -2,13 +2,13 @@ const Banner = (): JSX.Element => {
   return (
     <>
     <div className='banner'>
-      <h1>Book Library Management</h1>
+      <h1>Library</h1>
     </div>
     <style>
       {
         `
           .banner {
-            background: linear-gradient(rgba(37,36,36,.45),rgba(255,203,8,.45)),url('bookshelves.jpg') no-repeat 50%;
+            background: linear-gradient(rgba(20, 30, 48,.6),rgba(36, 59, 85,.9)),url('bookshelves.jpg') no-repeat 50%;
             background-size: cover;
             height: 200px;
           }
