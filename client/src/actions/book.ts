@@ -92,3 +92,38 @@ export const updateBook = () => async (dispatch:Dispatch, getState:any) => {
     })
   }
 }
+
+export const deleteBook = ( id: string | number) => async (dispatch:Dispatch) => {
+  dispatch({
+    type: constants.DELETE_BOOK_REQUEST
+  })
+
+  try {
+    const updateURL = '/book'
+    const data = { _id: id }
+
+    const response = await fetch(updateURL, {
+        method: 'DELETE',
+        mode: 'cors',
+        cache: 'no-cache',
+        credentials: 'same-origin',
+        headers: {
+          'Content-Type': 'application/json'
+        },
+        redirect: 'follow',
+        referrerPolicy: 'no-referrer',
+        body: JSON.stringify(data)
+    })
+
+    if (response.status === 200) {
+      dispatch({
+        type: constants.DELETE_BOOK_SUCCESS
+      })
+    }
+  } catch (error) {
+    dispatch({
+      type: constants.DELETE_BOOK_FAILURE,
+      errors: ['unable to delete']
+    })
+  }
+}

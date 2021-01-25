@@ -18,6 +18,7 @@ app.post('/book', (req, res) => {
     _id: req.body['_id'],
     title: req.body['title'],
     shortDescription: req.body['shortDescription'],
+    thumbnailUrl: req.body['thumbnailUrl'],
     author: req.body['author'],
     pageCount: req.body['pageCount']
   }
@@ -49,6 +50,22 @@ app.put('/book', (req, res) => {
   const filteredDataIndex = jsonData.map(function(b) {return b._id; }).indexOf(book._id);
 
   jsonData.splice(filteredDataIndex, 1, book)
+
+  const data = JSON.stringify(jsonData, null, 2)
+  fs.writeFileSync('books.json', data);
+
+  res.sendStatus(200);
+})
+
+app.delete('/book', (req, res) => {
+  const bookId = req.body['_id']
+
+  const rawdata = fs.readFileSync('books.json')
+  const jsonData = JSON.parse(rawdata)
+
+  const filteredDataIndex = jsonData.map(function(b) {return b._id; }).indexOf(bookId);
+
+  jsonData.splice(filteredDataIndex, 1)
 
   const data = JSON.stringify(jsonData, null, 2)
   fs.writeFileSync('books.json', data);

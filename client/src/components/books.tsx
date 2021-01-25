@@ -8,10 +8,11 @@ interface IProps extends RouteComponentProps {
   books: BookProps[];
   fetchBooks: () => void,
   setBook: (book: BookProps) => void;
+  deleteBook: (id: string | number) => void;
   doneFetching: boolean,
 }
 
-const Books: FC<IProps> = ({ books, fetchBooks, setBook, history, doneFetching }): JSX.Element => {
+const Books: FC<IProps> = ({ books, fetchBooks, setBook, deleteBook, history, doneFetching }): JSX.Element => {
   const [filteredData, setFilteredData] = useState<BookProps[]>(books)
 
   useEffect(() => {
@@ -37,6 +38,11 @@ const Books: FC<IProps> = ({ books, fetchBooks, setBook, history, doneFetching }
     }
   }
 
+  const handleDelete = async (id: string | number) => {
+    await deleteBook(id)
+    await fetchBooks()
+  }
+
   const handleSearch = (e: ChangeEvent<HTMLInputElement>) => {
     const value = e.target.value.toLowerCase()
     const bookList = [...books]
@@ -52,7 +58,7 @@ const Books: FC<IProps> = ({ books, fetchBooks, setBook, history, doneFetching }
     </div>
 
     <div className='books-container'>
-      {filteredData.map(book => <UIBook {...book} key={book._id} onEdit={handleEdit} />)}
+      {filteredData.map(book => <UIBook {...book} key={book._id} onEdit={handleEdit} onDelete={handleDelete} />)}
     </div>
     <style>
       {

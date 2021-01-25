@@ -1,5 +1,5 @@
 import { fetchBooks } from 'actions/books'
-import { setBook } from 'actions/book'
+import { setBook, deleteBook } from 'actions/book'
 import { connect } from 'react-redux';
 import { AnyAction, bindActionCreators, Dispatch } from 'redux';
 import Books from 'components/books'
@@ -21,7 +21,8 @@ const mapDispatchToProps = (dispatch: Dispatch<AnyAction>) => {
   return bindActionCreators(
     {
       fetchBooks,
-      setBook
+      setBook,
+      deleteBook
     },
     dispatch,
   );
