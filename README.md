@@ -7,22 +7,34 @@ This is a book management app where the user can do the CRUD operations. User ca
 Follow the steps to run this app locally : -
 
 Clone the repository
+```
+$ cd book-library-system && $ cd client
+```
 
-`$ cd book-library-sysmtem` && `$ cd client`
+Run the below command in the client folder. This will install all the client dependencies.
+```
+$ npm install
+```
 
-Run `$ npm install`. This will install all the client dependencies.
+Now switch to `server` folder by running `$ cd server`
 
-`$ cd server`
+Run the below command in server folder. This will install all the server related dependencies
+```
+$ npm install
+```
 
-Run `$ npm install`. This will install all the server related dependencies
+Go to the parent directory app and run
 
-Go to the parent directory app
-
-Run `$ npm install`
+```
+$ npm install
+```
 
 Now all the dependencies are installed and our app can be started.
 
-Now run `$ npm run dev`
+To start the app run the below command
+```
+$ npm run dev
+```
 
 This will start the node server and then it will start the react application
 
