@@ -6,16 +6,16 @@ import { RouteComponentProps } from 'react-router-dom'
 
 interface IProps extends RouteComponentProps {
   book: BookProps;
-  updateNewBookDetails: (name: string, value: string | number | Array<string>) => void;
+  updateNewBookDetails: (name: string, value: string | number) => void;
   saveBook: () => void;
 }
 
 const AddBook: FC<IProps>  = ({ book, updateNewBookDetails, saveBook, history }): JSX.Element => {
-  const handleChange = (name: string, value: string | number | Array<string>) => {
+  const handleChange = (name: string, value: string | number) => {
     updateNewBookDetails(name, value)
   }
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (e:ChangeEvent<HTMLFormElement>) => {
     e.preventDefault()
 
     const id = generateId()
@@ -29,7 +29,7 @@ const AddBook: FC<IProps>  = ({ book, updateNewBookDetails, saveBook, history })
   return (
     <>
       <div className='book-form'>
-        <form onSubmit={handleSubmit} method='post'>
+        <form onSubmit={(e:ChangeEvent<HTMLFormElement>) => handleSubmit(e)} method='post'>
           <div className='form-item'>
             <label>Book Name</label>
             <input type='text' name='title' value={book.title} onChange={(e: ChangeEvent<HTMLInputElement>) => handleChange(e.target.name, e.target.value)} />

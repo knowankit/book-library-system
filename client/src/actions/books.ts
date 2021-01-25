@@ -1,6 +1,7 @@
 import constants from 'constants/books'
+import { Dispatch } from 'redux';
 
-export const fetchBooks = () => async (dispatch) => {
+export const fetchBooks = () => async (dispatch:Dispatch) => {
   dispatch({
     type: constants.FETCH_BOOKS_REQUEST
   })
