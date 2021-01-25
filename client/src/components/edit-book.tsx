@@ -32,7 +32,7 @@ const EditBook: FC<IProps>  = ({ book, updateNewBookDetails, updateBook, resetBo
   }
 
   const renderUI = () => {
-    if(!book.title) {
+    if(!book._id) {
       return <UIFormSelectSkeleton />
     }
 

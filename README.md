@@ -8,25 +8,19 @@ A searchbox has been added to search the book list.
 ## Installation
 Follow the steps to run this app locally : -
 
-Clone the repository
-```
-$ cd book-library-system && $ cd client
-```
-
-Run the below command in the client folder. This will install all the client dependencies.
+Clone the repository and change the directory to `book-library-system` and run
 ```
 $ npm install
 ```
 
-Now switch to `server` folder by running `$ cd server`
+Now switch to `client` folder and Run the below command. This will install all the client dependencies.
+```
+$ npm install
+```
+
+Now switch to `server` folder by running `cd ../server`
 
 Run the below command in server folder. This will install all the server related dependencies
-```
-$ npm install
-```
-
-Go to the parent directory app (book-library-system) and run : -
-
 ```
 $ npm install
 ```
