@@ -234,10 +234,20 @@
   },
   {
     "_id": 16,
-    "title": "Brownfield Application Development in .get",
-    "shortDescription": "Brownfield Application Development in .Net shows you how to approach legacy applications with the state-of-the-art concepts, patterns, and tools you've learned to apply to new projects. Using an existing application as an example, this book guides you in applying the techniques and best practices you need to make it more maintainable and receptive to change.",
+    "title": "Brownfield Application Development in .NET",
+    "isbn": "1933988711",
+    "pageCount": 550,
     "thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/baley.jpg",
-    "pageCount": 550
+    "shortDescription": "Brownfield Application Development in .Net shows you how to approach legacy applications with the state-of-the-art concepts, patterns, and tools you've learned to apply to new projects. Using an existing application as an example, this book guides you in applying the techniques and best practices you need to make it more maintainable and receptive to change.",
+    "longDescription": "It's easy to get excited about building a new software project from scratch. So-called \"greenfield\" projects often involve learning new technology and the opportunity for experimentation. Working on established software projects may seem less glamorous.    Most software developers have inherited a monolithic application where the day-to-day tasks involve maintenance, incremental improvements, or even cleaning up the mess another programmer left behind. These legacy or brownfield projects often have tightly coupled components, low cohesion, and poor separation of concerns, making them fragile and resistant to change.    Brownfield Application Development in .Net shows you how to approach legacy applications with the state-of-the-art concepts, patterns, and tools you've learned to apply to new projects. Using an existing application as an example, this book guides you in applying the techniques and best practices you need to make it more maintainable and receptive to change.    Starting with the build process and the introduction of unit tests, the authors show you how to set up the application so that in later chapters, you can make incremental changes aimed at decoupling components from each other. Each practice introduced will increase your confidence and ability to make subsequent changes to your code.    As the book proceeds, the authors introduce frameworks and tools commonly used today while still approaching the subject from a conceptual level so that you can substitute alternate tools as appropriate. This book examines the reasons why a tool is necessary, not the tool itself. Because the book is based on the authors' experiences, Brownfield Application Development in .Net moves beyond the theories and shows you the techniques you need to be successful.",
+    "status": "PUBLISH",
+    "authors": [
+      "Kyle Baley",
+      "Donald Belcham"
+    ],
+    "categories": [
+      "Microsoft"
+    ]
   },
   {
     "_id": 17,
@@ -257,9 +267,19 @@
   },
   {
     "_id": 20,
-    "title": "Taming cat",
+    "title": "Taming Jaguar",
+    "isbn": "1884777686",
+    "pageCount": 362,
     "thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/barlotta3.jpg",
-    "pageCount": 362
+    "longDescription": "Taming Jaguar is part of the PowerBuilder Developer's series, which includes Distributed Application Development with PowerBuilder 6 and Jaguar Development with PowerBuilder 7.    An application server is the heart of your enterprise computing architecture, centralizing your web content, business logic, and access to your data and legacy applications. Sybase's application server, Jaguar CTS, delivers performance, scalability, and flexibility running CORBA , COM, Java/EJB, C++, and PowerBuilder components.    If you are looking to adopt Jaguar in your enterprise, look no further. Taming Jaguar shows you how to solve the real-world problems of installing, trouble-shooting, designing, developing, and maintaining a Jaguar application. Topical chapters are organized in a Q & A format making it easy for you to quickly find the solution to your problem. They also provide foundational and background information as well as detailed technical how-tos.    Although designed so you can find your problems easily, this book is meant to be read cover-to-cover with each chapter discussing its topic exhaustively.    What's inside:    J2EE development  Java Servlets  Jaguar administration & code balancing  EJBs  Web development with PowerDynamo  Advanced component design ",
+    "status": "PUBLISH",
+    "authors": [
+      "Michael J. Barlotta",
+      "Jason R. Weiss"
+    ],
+    "categories": [
+      "PowerBuilder"
+    ]
   },
   {
     "_id": 21,
@@ -276,20 +296,5 @@
       "Java",
       "Computer Graphics"
     ]
-  },
-  {
-    "_id": "_7l2c5zu33",
-    "title": "How to increase font size for Google Map Autocomplete Search drop down text?",
-    "shortDescription": "asds",
-    "thumbnailUrl": "https://s3.amazonaws.com/AKIAJC5RLADLUMVRPFDQ.book-thumb-images/barrilleaux.jpg",
-    "author": "Nicholas Cage",
-    "pageCount": "44"
-  },
-  {
-    "_id": "_urz5kw53e",
-    "title": "How to increase font size for Google Map Autocomplete Search drop down text?",
-    "shortDescription": "",
-    "author": "",
-    "pageCount": 0
   }
 ]

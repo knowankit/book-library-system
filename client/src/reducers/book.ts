@@ -41,6 +41,29 @@ export default produce((draftState, action) => {
 
         break
 
+      case constants.UPDATE_NEW_BOOK_DETAILS:
+        draftState.book[action.key] = action.value
+
+        break
+
+      case constants.DELETE_BOOK_REQUEST:
+        draftState.isFetching = true
+        draftState.doneFetching = false
+
+        break
+
+      case constants.DELETE_BOOK_SUCCESS:
+        draftState.doneFetching = true
+        draftState.isFetching = false
+
+        break
+
+      case constants.DELETE_BOOK_FAILURE:
+        draftState.isFetching = false
+        draftState.doneFetching = true
+
+        break
+
     case constants.SET_BOOK:
       draftState.book = action.value
 

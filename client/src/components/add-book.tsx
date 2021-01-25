@@ -50,7 +50,7 @@ const AddBook: FC<IProps>  = ({ book, updateNewBookDetails, saveBook, history })
 
           <div className='form-item'>
             <label>Author</label>
-            <input type='text' name='author' value={book.author} onChange={(e: ChangeEvent<HTMLInputElement>) => handleChange(e.target.name, e.target.value)} />
+            <input type='text' name='author' value={book.authors} onChange={(e: ChangeEvent<HTMLInputElement>) => handleChange(e.target.name, e.target.value)} />
           </div>
 
 

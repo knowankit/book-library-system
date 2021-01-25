@@ -7,6 +7,6 @@ export type BookProps =  {
   shortDescription?: string,
   longDescription?: string,
   status?: string,
-  author: string,
+  authors?: string,
   categories?: Array<string>
 }
