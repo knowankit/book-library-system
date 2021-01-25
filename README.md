@@ -1,5 +1,5 @@
 # Book Library System
-This is a book management app where the user can do the CRUD operations. User can add/edit/delete books.
+This is a book management app where the user can do the CRUD operations. User can `add/edit/delete` books. Data's are served from the express server and any `update/delete/edit` in the books will write in the json file.
 
 ![Library](https://github.com/knowankit/book-library-system/blob/master/preview.png?raw=true)
 
@@ -23,7 +23,7 @@ Run the below command in server folder. This will install all the server related
 $ npm install
 ```
 
-Go to the parent directory app and run
+Go to the parent directory app (book-library-system) and run : -
 
 ```
 $ npm install
@@ -31,7 +31,7 @@ $ npm install
 
 Now all the dependencies are installed and our app can be started.
 
-To start the app run the below command
+To start the app run the below command : -
 ```
 $ npm run dev
 ```
