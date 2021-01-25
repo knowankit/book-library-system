@@ -7,7 +7,7 @@ const Book:FC<IProps> = ({ _id, title, pageCount, thumbnailUrl, shortDescription
   return (
       <div className='book-container'>
         <div className='book-image'>
-          <img src={thumbnailUrl} height='200' />
+          <img src={thumbnailUrl} height='200' alt='Book thumbnail' />
         </div>
         <div className='book-details'>
           <b className='book-title'>{title}</b>

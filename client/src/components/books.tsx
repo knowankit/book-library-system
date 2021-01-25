@@ -81,6 +81,7 @@ const Books: FC<IProps> = ({ books, fetchBooks, setBook, history, doneFetching }
           .form-search input[type="search"] {
             box-sizing: border-box;
             padding-left: 20px;
+            box-shadow: 3px -3px 15px -6px #ccc;
           }
 
           .form-search input:outline {
